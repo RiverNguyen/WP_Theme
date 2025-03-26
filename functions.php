@@ -6,6 +6,19 @@ function jang_theme_support () {
 
 add_action("after_setup_theme", "jang_theme_support");
 
+function jang_menus () {
+    $locations = array(
+        "primary" => "Desktop Primary Left Sidebar",
+        "footer" => "Footer Menu Items"
+    );
+
+    register_nav_menus($locations);
+}
+
+add_action("init", "jang_menus");
+
+
+
 function jang_register_styles() {
     $version = wp_get_theme()->get("Version");
 
